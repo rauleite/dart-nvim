@@ -34,7 +34,7 @@ require("lazy").setup({
 })
 
 -- COLOR SCHEME
-vim.cmd.colorscheme("catppuccin")
+-- vim.cmd.colorscheme("catppuccin")
 
 -- KEYMAPS
 -- require("core.keymaps")

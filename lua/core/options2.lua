@@ -1,6 +1,8 @@
 --
--- options após Lazy startups
+-- Lazy post-startup options
 --
 
--- o dart exige abilitação manual, já que ele não é gerenciado pelo Mason
+vim.cmd.colorscheme("catppuccin")
+
+-- dart requires manual enabling as it is not managed by Mason
 vim.lsp.enable({ 'dart' })

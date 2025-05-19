@@ -1,5 +1,5 @@
 --
--- options pré Lazy startups
+-- Lazy pre-startup options
 --
 
 vim.opt.clipboard = 'unnamedplus' -- Habilita clipboard do sistema
@@ -37,7 +37,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- DIAGNOSTICS
 vim.diagnostic.config({
   float = {
     border = "rounded",
@@ -48,9 +47,7 @@ vim.diagnostic.config({
     end,
     max_width = math.floor(vim.api.nvim_win_get_width(0) * 0.8), -- Define largura automática 80%
     wrap = true                                                  -- Garante que a quebra de linha seja natural
-  }
-})
-vim.diagnostic.config({
+  },
   virtual_text = {
     prefix = "→", -- Ícone antes da mensagem
     spacing = 2, -- Espaço entre o código e o diagnóstico
@@ -59,7 +56,8 @@ vim.diagnostic.config({
       local max_width = math.floor(vim.api.nvim_win_get_width(0) * 0.75) -- 80% da largura da tela
       return string.sub(diagnostic.message, 1, max_width) .. (string.len(diagnostic.message) > max_width and "…" or "")
     end,
-  }
+  },
+  update_in_insert = false -- Melhora performance desativando atualizações durante digitação
 })
 
 -- -- Cria um grupo para o autocmd de formatação
@@ -69,6 +67,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function(args)
     local bufnr = args.buf
+    -- local clients = vim.lsp.get_clients({ bufnr = bufnr })
     local clients = vim.lsp.get_clients({ bufnr = bufnr })
     for _, client in ipairs(clients) do
       if client and client.supports_method and (client:supports_method("textDocument/formatting")) then

@@ -10,7 +10,7 @@ end
 return {
   -- name = "yamlls",
   -- capabilities = require('cmp_nvim_lsp').default_capabilities(), -- Adiciona suporte ao nvim-cmp
-  cmd = { "/home/raul/.local/share/nvim/mason/bin/yaml-language-server", "--stdio" },
+  cmd = { "~/.local/share/nvim/mason/bin/yaml-language-server", "--stdio" },
   filetypes = { "yaml", "yml" },
   -- root_dir = get_root_dir(), -- Define a raiz do projeto
   settings = {
