@@ -13,6 +13,7 @@ return {
         -- Se usar um snippet engine, defina a função de expansão aqui
         expand = function(args)
           -- Exemplo: require("luasnip").lsp_expand(args.body)
+          require('luasnip').lsp_expand(args.body)
         end,
       },
       mapping = cmp.mapping.preset.insert({
@@ -22,6 +23,7 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         -- { name = "buffer" },
+        { name = 'luasnip' },
         { name = "path" },
       }),
     })

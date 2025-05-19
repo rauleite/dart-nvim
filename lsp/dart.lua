@@ -1,10 +1,12 @@
 return {
   cmd = { "/usr/bin/dart", "language-server", "--protocol=lsp" }, -- Ou caminho completo: vim.fn.stdpath("data") .. "/mason/bin/lua-language-server"
   filetypes = { "dart" },
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
   init_options = {
-    onlyAnalyzeProjectsWithOpenFiles = true,
+    onlyAnalyzeProjectsWithOpenFiles = false, -- só esse realmente eu não havia testado
     suggestFromUnimportedLibraries = true,
-    -- closingLabels = true,
+    closingLabels = true,
+    completeFunctionCalls = true,
     -- outline = true,
     -- flutterOutline = true,
   },
