@@ -10,8 +10,8 @@ vim.opt.scrolloff = 8
 vim.opt.ignorecase = true
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
--- Make sure to setup `mapleader` and `maplocalleader` before
 
+-- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
