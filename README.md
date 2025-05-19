@@ -62,15 +62,13 @@ All managed through `mason.nvim` + native `nvim-lspconfig`.
    mv ~/.config/nvim ~/.config/nvim.bak
    ```
 2. Clone this repo:
-
-```sh
-git clone https://github.com/yourusername/your-repo ~/.config/nvim
-```
+   ```sh
+   git clone https://github.com/rauleite/dart-nvim ~/.config/nvim
+   ```
 3. Start Neovim and let lazy.nvim auto-install plugins:
-
-```sh
-nvim
-```
+   ```sh
+   nvim
+   ```
 ### LSP-Specific Requirements
 
 | LSP        | Dependencies                                                                 | Installation                                                                                     |
