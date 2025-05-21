@@ -3,7 +3,7 @@ return {
   event = "InsertEnter", -- carrega o plugin ao entrar no modo de inserção
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    -- "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
   },
   config = function()
@@ -22,7 +22,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        -- { name = "buffer" },
+        { name = "buffer" },
         { name = 'luasnip' },
         { name = "path" },
       }),
